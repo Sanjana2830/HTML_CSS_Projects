@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+section{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom right, #000000 14%, #123350 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    perspective: 1000px;
+}
+
+section::before{
+    content: "";
+    position: absolute;
+    height: 270px;
+    width: 270px;
+    border-radius: 50%;
+    transform: translate(-220px,-150px);
+    background: linear-gradient(to top left, #66ccff 0%, #cc33ff 91%);
+}
+
+section::after{
+    content: "";
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    transform: translate(-50px, 150px);
+    background: linear-gradient(to bottom right, #66cc50 0%, #993399 100%);
+}
+
+.circle{
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    transform: translate(210px, 20px);
+    background: linear-gradient(to bottom right, #cc0066 0%, #660066 64%);
+}
+
+.minidot{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transform: translate(300px, -5px);
+    background: linear-gradient(to bottom right, #0066cc 27%, #ffffff 100%);
+    opacity: 0.5;
+}
+
+.minicircle{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transform: translate(320px, -5px);
+    background: linear-gradient(to bottom left, #660066 20%, #ffffff 100%);
+    opacity: 0.3
+}
+
+.container{
+    position: relative;
+    height: 250px;
+    width: 400px;
+    z-index: 100;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+}
+
+.container:hover {
+    transform: rotateY(180deg);
+}
+
+.container .card{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 25px;
+    border-radius: 25px;
+    backdrop-filter: blur(25px);
+    background: rgb(255 255 255 / 8%);
+    box-shadow: 0px 20px 45px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgb(255 255 255 / 33%);
+    backface-visibility: hidden;
+}
+
+.card.frontface .cardname{
+    font-size: x-large;
+    color: #fff;
+}
+
+hr{
+    position: relative;
+    margin-top: 25px;
+    width: 47%;
+}
+
+.line hr{
+    margin-top: -1px;
+    position: absolute;
+    left: 188px;
+    width: 8%;
+    rotate: -40deg;
+    transform-origin: 0 0;
+}
+
+p{
+    width: 250px;
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+.card.frontface .name{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 70px;
+}
+
+.cardnumber{
+    font-size: 22px;
+}
+img{
+    width: 15%;
+}
+
+.card.backface {
+    border: none;
+    padding: 15px 25px 25px 25px;
+    transform: rotateY(180deg);
+}
+
+.card.backface h6{
+    font-size: 8px;
+}
+
+.card.backface .magnetic-strip{
+    position: absolute;
+    top: 40px;
+    left: 0;
+    height: 45px;
+    width: 100%;
+    background: #000;
+}
+
+.card.backface .signature {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 80px;
+    height: 40px;
+    width: 85%;
+    border-radius: 6px;
+    background: repeating-linear-gradient(#fff, #fff 3px, #efefef 0px, #efefef 9px);
+}
+
+.signature i{
+    color: #000;
+    font-size: 12px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-right: -30px;
+    z-index: -1;
+}
+
+.card.backface h5{
+    font-size: 8px;
+    margin-top: 15px;
+}
